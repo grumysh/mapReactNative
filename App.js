@@ -7,9 +7,9 @@
  */
 
 import React from 'react';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 
-import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 
 const App: () => React$Node = () => {
   return (
@@ -24,8 +24,17 @@ const App: () => React$Node = () => {
             latitudeDelta: 0.2,
             longitudeDelta: 0.3,
           }}
-          showsTraffic={true}
-        />
+          showsTraffic={true}>
+          <Marker
+            draggable
+            coordinate={{
+              latitude: 4.6997102,
+              longitude: -74.091749,
+            }}
+            title={'Amrcador agregado'}
+            pinColor={'green'}
+          />
+        </MapView>
       </SafeAreaView>
     </>
   );
